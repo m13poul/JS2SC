@@ -1,0 +1,20 @@
+{
+  "name": "installationserver",
+  "version": "0.0.1",
+  "description": "interactive sound installation",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "chrisfunk",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "jsonfile": "^2.4.0",
+    "socket.io": "^1.7.3",
+    "osc": "2.2.0"
+
+  }
+}

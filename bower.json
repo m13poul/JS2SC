@@ -1,0 +1,17 @@
+{
+  "name": "installationserver",
+  "description": "interactive sound installation",
+  "main": "server.js",
+  "authors": [
+    "chrisfunk"
+  ],
+  "license": "ISC",
+  "homepage": "http://localhost:1335/",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "bootstrap": "^3.3.7"
+  },
+    "install": {
+        "path": "client/libs"
+    }
+}

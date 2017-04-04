@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Μέθεξις</title>
+   <link rel="stylesheet" href="tabs.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header">
+    <h1>Μέθεξις (An interactive sound installation by Christos Poulias)</h1>
+  </div>
+
+    
+<div data-role="tabs">
+    <ul data-role="listview" data-inset="true" class="tablist-left">
+      <li><a href="#one" data-ajax="false">Granular</a></li>
+      <li><a href="#two" data-ajax="false">Drones</a></li>
+      <li><a href="ajax-content.html" data-ajax="false">Acceleration</a></li>
+    </ul>
+    <ul id="one" class="tablist-content" data-role="listview" data-inset="true">
+        
+     <div data-role="rangeslider" id="Slider1">
+    <label for="range-1a">VolumeGranular</label>
+    <input name="range-1a" id="VolumeGranular" min="0" max="100" value="3" type="range" onchange="Myfunction()">
+    <label for="range-1b">VolumeGranular</label>
+    <input name="range-1b" id="range-1b" min="0" max="100" value="100" type="range">
+    </div>
+    
+     <div data-role="rangeslider">
+    <label for="range-1a">PitchGranular</label>
+    <input name="range-1a" id="PitchGranular" min="0" max="100" value="0" type="range" onchange="Myfunction()">
+    <label for="range-1b">PitchGranular</label>
+    <input name="range-1b" id="range-1b" min="0" max="100" value="100" type="range">
+    </div>
+    
+     <div data-role="rangeslider">
+    <label for="range-1a">Thickening-DilutionGranular</label>
+    <input name="range-1a" id="range-1a" min="0" max="100" value="0" type="range">
+    <label for="range-1b">Thickening-DilutionGranular</label>
+    <input name="range-1b" id="range-1b" min="0" max="100" value="100" type="range">
+    </div>
+    
+     <div data-role="rangeslider">
+    <label for="range-1a">Rangeslider4</label>
+    <input name="range-1a" id="range-1a" min="0" max="100" value="0" type="range">
+    <label for="range-1b">Rangeslider4</label>
+    <input name="range-1b" id="range-1b" min="0" max="100" value="100" type="range">
+    </div>
+    
+     <div data-role="rangeslider">
+    <label for="range-1a">Rangeslider5</label>
+    <input name="range-1a" id="range-1a" min="0" max="100" value="0" type="range">
+    <label for="range-1b">Rangeslider5</label>
+    <input name="range-1b" id="range-1b" min="0" max="100" value="100" type="range">
+    </div>
+        
+        
+        
+  </ul>
+    <ul id="two" class="tablist-content" data-role="listview" data-inset="true">
+        <li><a href="#">sound1</a></li>
+        <li><a href="#">sound2</a></li>
+        <li><a href="#">sound3</a></li>
+        <li><a href="#">sound4</a></li>
+        <li><a href="#">sound5</a></li>
+    </ul>
+
+    
+    </div>
+
+    <script src="Myscript.js"></script>
+
+</body>
+</html>
