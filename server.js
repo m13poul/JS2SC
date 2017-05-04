@@ -14,7 +14,6 @@ app.use(express.static(path.resolve(__dirname, 'client')));
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'client', 'views'));
 
-
 var socket = require('socket.io');
 var io = socket(server);
 io.sockets.on('connection', newConnection);
@@ -23,9 +22,20 @@ function newConnection(socket) {
     console.log('New Connection:', socket.id);
     socket.on('test', testmsg);
     function testmsg(test) {
-    var values = test;
-    console.log(test);
-        
+        var values = test;
+        var msg;
+        console.log(test);
+       //  console.log(test[0]);
+        msg = {
+            address: "/Methexis",
+            args: [
+                {
+                    type: "b",
+                    value: test
+                }
+            ]         
+        };
+        udpPort.send(msg);
     }
 }
 // Send to SuperCollider 
@@ -45,32 +55,9 @@ var udpPort = new osc.UDPPort({
 // Open the socket.
 udpPort.open();
 
-// Every second, send an OSC message to SuperCollider
-setInterval(function() {
-    var msg = {
-        address: "/hello/from/oscjs",
-        args: [
-            {
-                type: "f",
-                value: Math.random()
-            },
-            {
-                type: "f",
-                value: Math.random()
-            }
-        ]
-    };
-
-    console.log("Sending message", msg.address, msg.args, "to", udpPort.options.remoteAddress + ":" + udpPort.options.remotePort);
-    udpPort.send(msg);
-}, 60000);
-// End
-
 app.get('/', function(req, res){
     res.render('index.ejs');
 });
-
-
 
 app.get('/api/:sound/:value', changes);
 function changes(request, responce) {
@@ -118,4 +105,5 @@ app.get('/api', SendApi);
 function SendApi(request, responce) {
     responce.send(sounds);
     }
+
 
