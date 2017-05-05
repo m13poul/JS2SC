@@ -1,0 +1,2 @@
+# JS2SC
+Connect JS to SuperCollider as a basis for controlling SC from the web browser (ongoing)
